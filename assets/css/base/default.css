@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #eee;
+}
+
+.block {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}   
+
+.block .content {
+    width: 100%;
+    margin: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.block .content .title {
+    text-align: center;
+    font-size: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
