@@ -8,6 +8,7 @@
     <title>Login</title>
 
     <link rel="stylesheet" href="./assets/css/pages/login.css">
+    <link rel="stylesheet" href="./assets/css/components/alert.css">
 </head>
 
 <body>
@@ -16,16 +17,21 @@
             <h1>Aplicativo Fitness Academia</h1>
             <hr>
             <h3>Acesse aqui</h3>
-            <form action="" method="POST">
-                <label for="usuario">Usuário</label>
-                <input type="text" name="usuario" class="input" id="usuario" required>
+            <?php if (!empty($_GET['email'])) : ?>
+                <div class="alert">
+                    <p class="text">E-mail e/ou senha incorretos!</p>
+                </div>
+            <?php endif; ?>
+            <form action="./request-login.php" method="POST">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" class="input" id="email" required>
                 <label for="senha">Senha</label>
                 <input type="password" name="senha" class="input" id="senha" required>
 
-                <button>Next</button>
+                <button>Acessar</button>
             </form>
             <hr>
-            <a href="" class="cadastrar">Cadastre-se</a>
+            <a href="./cadastro.php" class="cadastrar">Cadastre-se</a>
         </div>
     </section>
 </body>
