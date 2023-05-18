@@ -1,3 +1,5 @@
+<?php $menus = $categorias->getAll(); ?>
+
 <header class="header">
     <nav class="navbar">
         <ul class="list">
@@ -9,30 +11,16 @@
                     <strong>Home</strong>
                 </a>
             </li>
-            <li class="item">
-                <a href="./nav.php?aba=1">
-                    <div class="icon">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <strong>Iniciante</strong>
-                </a>
-            </li>
-            <li class="item">
-                <a href="./nav.php?aba=2">
-                    <div class="icon">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <strong>Intermediário</strong>
-                </a>
-            </li>
-            <li class="item">
-                <a href="./nav.php?aba=3">
-                    <div class="icon">
-                        <i class="fas fa-dumbbell"></i>
-                    </div>
-                    <strong>Avançado</strong>
-                </a>
-            </li>
+            <?php foreach ($menus as $value) : ?>
+                <li class="item">
+                    <a href="./nav.php?aba=<?= base64_encode($value['id']); ?>">
+                        <div class="icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <strong><?= $value['titulo']; ?></strong>
+                    </a>
+                </li>
+            <?php endforeach; ?>
         </ul>
     </nav>
 </header>

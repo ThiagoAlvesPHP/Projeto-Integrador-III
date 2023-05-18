@@ -13,12 +13,23 @@ $listTreinos = $treinosNoticias->getAll();
         <div class="cards">
             <?php foreach ($listTreinos as $key => $value) : ?>
                 <div class="card">
-                    <p class="title"><?=$value['titulo']; ?></p>
-                    <a href="./treino.php?noticia=<?=base64_encode($value['id']); ?>">
-                        <img width="100%" src="./assets/images/<?=$value['imagem']; ?>" alt="<?=$value['titulo']; ?>">
+                    <p class="title"><?= $value['titulo']; ?></p>
+                    <a href="./treino.php?noticia=<?= base64_encode($value['id']); ?>">
+                        <img width="100%" src="./assets/images/<?= $value['imagem']; ?>" alt="<?= $value['titulo']; ?>">
                     </a>
                 </div>
             <?php endforeach; ?>
+        </div>
+    </div>
+
+    <div class="modals">
+        <div class="chat">
+            <i class="fas fa-comments"></i>
+            <p class="title">Chat</p>
+        </div>
+        <div class="contatos">
+            <i class="far fa-comment-dots"></i>
+            <p class="title">Contatos</p>
         </div>
     </div>
 </section>

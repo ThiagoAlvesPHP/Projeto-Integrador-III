@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 18-Maio-2023 às 10:03
+-- Tempo de geração: 18-Maio-2023 às 11:37
 -- Versão do servidor: 8.0.33-0ubuntu0.22.04.2
 -- versão do PHP: 8.1.18
 
@@ -20,6 +20,94 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `projeto_integrador`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `categorias`
+--
+
+CREATE TABLE `categorias` (
+  `id` int NOT NULL,
+  `titulo` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Extraindo dados da tabela `categorias`
+--
+
+INSERT INTO `categorias` (`id`, `titulo`) VALUES
+(1, 'Iniciante'),
+(2, 'Intermediário'),
+(3, 'Avançado');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `configuracoes`
+--
+
+CREATE TABLE `configuracoes` (
+  `id` int NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `sobrenome` varchar(100) NOT NULL,
+  `telefone` char(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Extraindo dados da tabela `configuracoes`
+--
+
+INSERT INTO `configuracoes` (`id`, `nome`, `sobrenome`, `telefone`) VALUES
+(1, 'Tulio', 'Vargas', '(11)24671-7265');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `instrutor`
+--
+
+CREATE TABLE `instrutor` (
+  `id` int NOT NULL,
+  `categoria_id` int NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `sobrenome` varchar(100) NOT NULL,
+  `telefone` char(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Extraindo dados da tabela `instrutor`
+--
+
+INSERT INTO `instrutor` (`id`, `categoria_id`, `nome`, `sobrenome`, `telefone`) VALUES
+(2, 1, 'José', 'Luiz', '(11)79384-3585'),
+(3, 2, 'Sandro', 'Amaral', '(11)71523-7948'),
+(4, 3, 'Carlos', 'Andrade', '(11)7279-0383');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `tipos_treinamentos`
+--
+
+CREATE TABLE `tipos_treinamentos` (
+  `id` int NOT NULL,
+  `categoria_id` int NOT NULL,
+  `titulo` varchar(100) NOT NULL,
+  `link` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+
+--
+-- Extraindo dados da tabela `tipos_treinamentos`
+--
+
+INSERT INTO `tipos_treinamentos` (`id`, `categoria_id`, `titulo`, `link`) VALUES
+(1, 1, 'Aula 01', 'https://www.youtube.com/watch?v=No6n6r5INkU'),
+(2, 1, 'Aula 02', 'https://www.youtube.com/watch?v=No6n6r5INkU'),
+(3, 2, 'Aula 01', 'https://www.youtube.com/watch?v=No6n6r5INkU'),
+(4, 3, 'Aula 01', 'https://www.youtube.com/watch?v=No6n6r5INkU'),
+(5, 3, 'Aula 02', 'https://www.youtube.com/watch?v=No6n6r5INkU'),
+(6, 3, 'Aula 03', 'https://www.youtube.com/watch?v=No6n6r5INkU');
 
 -- --------------------------------------------------------
 
@@ -73,6 +161,32 @@ INSERT INTO `usuarios` (`id`, `nome`, `sobrenome`, `telefone`, `email`, `senha`,
 --
 
 --
+-- Índices para tabela `categorias`
+--
+ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `configuracoes`
+--
+ALTER TABLE `configuracoes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `instrutor`
+--
+ALTER TABLE `instrutor`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_instrutor_categoria` (`categoria_id`);
+
+--
+-- Índices para tabela `tipos_treinamentos`
+--
+ALTER TABLE `tipos_treinamentos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_treinamentos_categoria` (`categoria_id`);
+
+--
 -- Índices para tabela `treinos_noticias`
 --
 ALTER TABLE `treinos_noticias`
@@ -87,6 +201,30 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
+
+--
+-- AUTO_INCREMENT de tabela `categorias`
+--
+ALTER TABLE `categorias`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `configuracoes`
+--
+ALTER TABLE `configuracoes`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `instrutor`
+--
+ALTER TABLE `instrutor`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `tipos_treinamentos`
+--
+ALTER TABLE `tipos_treinamentos`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `treinos_noticias`

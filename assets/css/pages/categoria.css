@@ -1,0 +1,47 @@
+.categoria .content table {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.categoria .content table thead tr th {
+    text-align: initial;
+    padding: 10px;
+    background: #DDD;
+}
+
+.categoria .content table tbody tr td {
+    border-bottom: 1px solid #DDD;
+    padding-bottom: 5px;
+}
+
+.categoria .content table tbody tr td a button {
+    margin-top: 5px;
+    padding: 8px;
+    cursor: pointer;
+    border: 0;
+    background-color: green;
+    color: #FFF;
+    transition: all ease .5s;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.categoria .content table tbody tr td a button:hover {
+    background-color: rgb(0, 182, 0);
+}
+
+.categoria .content p.title {
+    margin-bottom: 10px;
+}
+
+.categoria .content .video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: #FFF;
+    max-width: 580px;
+    margin: 0 auto;
+}
