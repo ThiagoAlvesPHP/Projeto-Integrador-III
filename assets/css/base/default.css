@@ -28,3 +28,7 @@ body {
     letter-spacing: 2px;
     text-transform: uppercase;
 }
+
+hr.division {
+    margin: 20px 0;
+}

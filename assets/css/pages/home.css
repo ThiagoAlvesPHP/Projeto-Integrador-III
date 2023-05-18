@@ -2,3 +2,27 @@
     width: 100%;
 }
 
+.home .sub-title {
+    margin-bottom: 20px;
+}
+
+.home .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.home .cards p.title {
+    font-size: 18px;
+}
+
+.home .cards img {
+    max-height: 250px;
+    border-radius: 10px;
+    transition: all ease .5s;
+    margin-top: 5px;
+}
+
+.home .cards img:hover {
+    box-shadow: 0px 0px 5px #000;
+}

@@ -1,9 +1,9 @@
 <?php
-class Usuarios
+class TreinosNoticias
 {
 	private $db;
 
-	const TABLE = "usuarios";
+	const TABLE = "treinos_noticias";
 
 	public function __construct()
 	{
@@ -34,7 +34,7 @@ class Usuarios
 			$fields[] = "$key=:$key";
 		}
 		$fields = implode(', ', $fields);
-		$sql = $this->db->prepare("INSERT INTO " . Usuarios::TABLE . " SET {$fields}");
+		$sql = $this->db->prepare("INSERT INTO " . TreinosNoticias::TABLE . " SET {$fields}");
 
 		foreach ($params as $key => $value) {
 			$sql->bindValue(":{$key}", $value);
@@ -45,39 +45,24 @@ class Usuarios
 	}
 
 	/**
-	 * Validação e email
+	 * Lista de treinos
 	 */
-	public function validateEmail($email)
+	public function getAll()
 	{
-		$sql = "SELECT * FROM ".Usuarios::TABLE." WHERE email = '{$email}'";
+		$sql = "SELECT * FROM ".TreinosNoticias::TABLE."";
 		$sql = $this->db->query($sql);
-		
-		return (!$sql->rowCount()) ? false : true;
+
+		return $sql->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	/**
-	 * Validação se usuario esta logado ou não
+	 * Treino po id
 	 */
-	public function validateLogado()
+	public function get($id)
 	{
-		if(!isset($_SESSION['lg'])){
-			header('Location: login.php');
-			exit;
-		}
-	}
-
-	/**
-	 * Login
-	 */
-	public function login($params)
-	{
-		$sql = "SELECT * FROM ".Usuarios::TABLE." WHERE email = '{$params['email']}' AND senha = '{$params['senha']}'";
+		$sql = "SELECT * FROM ".TreinosNoticias::TABLE." WHERE id = '{$id}'";
 		$sql = $this->db->query($sql);
 
-		if ($sql->rowCount() > 0) {
-			return $sql->fetch(PDO::FETCH_ASSOC);
-		} else {
-			return false;
-		}
+		return $sql->fetch(PDO::FETCH_ASSOC);
 	}
 }
