@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 18-Maio-2023 às 11:37
+-- Tempo de geração: 18-Maio-2023 às 15:00
 -- Versão do servidor: 8.0.33-0ubuntu0.22.04.2
 -- versão do PHP: 8.1.18
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `projeto_integrador`
+-- Banco de dados: `projeto_integrador_2`
 --
 
 -- --------------------------------------------------------
@@ -117,9 +117,9 @@ INSERT INTO `tipos_treinamentos` (`id`, `categoria_id`, `titulo`, `link`) VALUES
 
 CREATE TABLE `treinos_noticias` (
   `id` int NOT NULL,
-  `titulo` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `imagem` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `conteudo` text COLLATE utf8mb4_general_ci NOT NULL,
+  `titulo` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `imagem` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `conteudo` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `dt_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -141,11 +141,11 @@ INSERT INTO `treinos_noticias` (`id`, `titulo`, `imagem`, `conteudo`, `dt_regist
 
 CREATE TABLE `usuarios` (
   `id` int NOT NULL,
-  `nome` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `sobrenome` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
-  `telefone` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
-  `email` varchar(150) COLLATE utf8mb4_general_ci NOT NULL,
-  `senha` varchar(32) COLLATE utf8mb4_general_ci NOT NULL,
+  `nome` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `sobrenome` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `telefone` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `senha` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `dt_registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -237,6 +237,22 @@ ALTER TABLE `treinos_noticias`
 --
 ALTER TABLE `usuarios`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `instrutor`
+--
+ALTER TABLE `instrutor`
+  ADD CONSTRAINT `fk_instrutor_categoria` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`);
+
+--
+-- Limitadores para a tabela `tipos_treinamentos`
+--
+ALTER TABLE `tipos_treinamentos`
+  ADD CONSTRAINT `fk_treinamentos_categoria` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

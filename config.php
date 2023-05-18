@@ -6,5 +6,8 @@ $get = filter_input_array(INPUT_GET, FILTER_DEFAULT);
 $treinosNoticias = new TreinosNoticias();
 $categorias = new Categorias();
 $tiposTreinamentos = new TiposTreinamentos();
+$configuracoes = new Configuracoes();
+$instrutor = new Instrutor();
+
 $usuario = new Usuarios();
 $usuario->validateLogado();

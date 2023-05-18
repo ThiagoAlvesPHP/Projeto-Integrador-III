@@ -18,7 +18,7 @@ body {
 .block .content {
     width: 100%;
     margin: 20px;
-    padding: 20px;
+    padding: 40px 20px 20px;
     box-sizing: border-box;
 }
 

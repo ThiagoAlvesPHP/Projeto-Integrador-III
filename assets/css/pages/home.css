@@ -30,13 +30,14 @@
 
 .modals {
     position: absolute;
-    left: 0;
+    /* left: 0; */
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
 }
 
-.modals .chat, .modals .contatos {
+.modals .chat,
+.modals .contatos {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,4 +47,66 @@
     border-radius: 5px;
     box-shadow: 0px 0px 3px #DDD;
     cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    transition: all ease .5s;
+}
+
+.modals .chat:hover,
+.modals .contatos:hover {
+  background-color: #ccc;
+  color: #fff;
+}
+
+
+.modals .modal {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: -100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    transition: all ease .5s;
+}
+
+.enable {
+    top: 0% !important;
+}
+
+.modals .modal .content {
+    padding: 20px;
+    max-width: 780px;
+    background-color: #FFF;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.modals .modal .content .fas {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.modals .modal .content .header {
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.modals .modal .content .body {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.modals .modal .content .body .list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modals .modal .content .body .list .title {
+    font-size: 20px !important;
 }
