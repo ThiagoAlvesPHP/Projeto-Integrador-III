@@ -22,7 +22,7 @@ header .navbar ul li {
     box-sizing: border-box;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
-    background-color: #FFF;
+    background-color: #f5f0f0;
     border: 1px solid #FFF;
     transition: all ease .5s;
 }
@@ -41,10 +41,11 @@ header .navbar ul li a {
 }
 
 header .navbar ul li a .icon i {
-    font-size: 25px;
+    font-size: 30px;
     margin-bottom: 10px;
+    
 }
 
 header .navbar ul li a strong{
-    font-size: 18px;
+    font-size: 20px;
 }
