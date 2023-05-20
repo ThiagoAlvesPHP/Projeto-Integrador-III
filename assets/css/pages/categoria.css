@@ -1,6 +1,11 @@
+
+body {
+    background: url("https://s.zst.com.br/cms-assets/2021/01/peso-de-academia-5-.png");
+    background-size: 1900px
+}
 .categoria .content table {
     width: 100%;
-    margin: 20px 0;
+    margin: 30px 0;
 }
 
 .categoria .content table thead tr th {
@@ -19,8 +24,8 @@
     padding: 8px;
     cursor: pointer;
     border: 0;
-    background-color: green;
-    color: #FFF;
+    background-color: rgb(8, 8, 8);
+    color: #faf9f9;
     transition: all ease .5s;
     letter-spacing: 1.5px;
     font-weight: 600;
@@ -40,8 +45,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
-    background: #FFF;
-    max-width: 580px;
+    padding: 25px;
+    background: #111111;
+    max-width: 600px;
     margin: 0 auto;
 }

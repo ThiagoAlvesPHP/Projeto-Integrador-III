@@ -1,7 +1,16 @@
 .home {
     width: 100%;
-    position: relative;
-}
+    position: relative;   
+    }
+    
+    body {
+       
+        background-color: #ccc;
+        background: url("https://s.zst.com.br/cms-assets/2021/01/peso-de-academia-5-.png"); 
+        opacity: 0.9;
+        background-size: 1900px;
+        
+    }
 
 .home .sub-title {
     margin-bottom: 20px;
@@ -14,11 +23,15 @@
 }
 
 .home .cards p.title {
-    font-size: 18px;
+    font-size: 40px;
+    letter-spacing: 1.5px;
+    font-weight: 1000;
+    font-size: 28px;
+
 }
 
 .home .cards img {
-    max-height: 250px;
+    max-height: 260px;
     border-radius: 10px;
     transition: all ease .5s;
     margin-top: 5px;
@@ -42,7 +55,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 8px;
+    padding: 13px;
     background-color: #FFF;
     border-radius: 5px;
     box-shadow: 0px 0px 3px #DDD;

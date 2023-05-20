@@ -6,10 +6,12 @@ $listTreinos = $treinosNoticias->getAll();
 
 <section class="home block">
     <div class="content">
-        <h1 class="title">Entretenimento</h1>
+        <h1 class="title">Bem vindo ao sistema de treinos</h1>
+
         <hr class="division">
 
         <h3 class="sub-title">Tipos de Treinamento</h3>
+        
         <div class="cards">
             <?php foreach ($listTreinos as $key => $value) : ?>
                 <div class="card">
