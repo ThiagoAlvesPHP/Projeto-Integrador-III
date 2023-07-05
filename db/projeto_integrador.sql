@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 18-Maio-2023 às 15:00
+-- Tempo de geração: 05-Jul-2023 às 05:44
 -- Versão do servidor: 8.0.33-0ubuntu0.22.04.2
--- versão do PHP: 8.1.18
+-- versão do PHP: 8.1.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `projeto_integrador_2`
+-- Banco de dados: `projeto_integrador`
 --
 
 -- --------------------------------------------------------
@@ -150,13 +150,6 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Extraindo dados da tabela `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `nome`, `sobrenome`, `telefone`, `email`, `senha`, `dt_registro`) VALUES
-(1, 'Thiago', 'Alves', '47992800841', 'thiagoalves@ltdeveloper.com.br', '202cb962ac59075b964b07152d234b70', '2023-05-17 19:27:58');
-
---
 -- Índices para tabelas despejadas
 --
 
@@ -236,7 +229,7 @@ ALTER TABLE `treinos_noticias`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT;
 
 --
 -- Restrições para despejos de tabelas
