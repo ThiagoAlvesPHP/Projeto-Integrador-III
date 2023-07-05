@@ -3,6 +3,10 @@
     position: relative;
 }
 
+.home h1.title {
+    margin-top: 20px;
+}
+
 .home .sub-title {
     margin-bottom: 20px;
 }
@@ -59,7 +63,7 @@
 .modals .chat:hover,
 .modals .contatos:hover {
     background-color: #ccc;
-    color: #fff;
+    color: #6e5b5b;
 }
 
 

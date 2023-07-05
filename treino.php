@@ -10,7 +10,7 @@ $treino = $treinosNoticias->get($id);
         <h1 class="title"><?= $treino['titulo']; ?></h1>
         <hr class="division">
 
-        <div class="content">
+        <div class="container">
             <img width="100%" src="./assets/images/<?= $treino['imagem']; ?>" alt="<?= $treino['titulo']; ?>">
 
             <p class="title conteudo">

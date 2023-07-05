@@ -26,6 +26,7 @@ header .navbar ul li {
     border: 1px solid #FFF;
     transition: all ease .5s;
 }
+
 header .navbar ul li:hover {
     background-color: #EEE;
     border: 1px solid #000;
@@ -43,9 +44,16 @@ header .navbar ul li a {
 header .navbar ul li a .icon i {
     font-size: 30px;
     margin-bottom: 10px;
-    
+
 }
 
-header .navbar ul li a strong{
+header .navbar ul li a strong {
     font-size: 20px;
+}
+
+/* Estilos para dispositivos móveis com largura de tela de até 600 pixels */
+@media screen and (max-width: 600px) {
+    header .navbar ul li a strong {
+        font-size: 12px;
+    }
 }
